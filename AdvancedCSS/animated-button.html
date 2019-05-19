@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Animated Button</title>
+    <style media="screen">
+      body {
+        background-color: #F1F1AB;
+        text-align: center;
+        font-family: Lato;
+      }
+
+      h1 {
+        color: white;
+      }
+
+      button {
+        height: 5em;
+        width: 20em;
+        font-size: 20px;
+        font-weight: 300px;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 25px 80px;
+        margin: 0 auto;
+      }
+
+      button:hover {
+        box-shadow: 0 3px #EFA424;
+        top: 3px;
+      }
+
+      button:active {
+        box-shadow: none;
+        top: 6px;
+      }
+
+      .btn {
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background-color: #FCAD26;
+        border-radius: 20px;
+        display: block;
+        position: relative;
+        box-shadow: 0 6px #EFA424;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This button does nothing</h1>
+    <button class="btn">Click Me</button>
+  </body>
+</html>
