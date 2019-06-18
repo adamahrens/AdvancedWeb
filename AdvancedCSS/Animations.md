@@ -26,3 +26,26 @@ If a button is selected it has focus. When you click and hold the button it beco
 ## Transform
 
 `div { transform: function } `
+
+## Keyframe
+
+Transitions are for single state changes. Keyframes are for multi state transitions.
+
+First step is to create the animation, then you need to assign it to an element.
+
+`@keyframes name_of_key_frame`
+
+Can define any number of steps in it such as `6% {} 10% {} 36% {}` etc
+
+Use this properties
+
+```
+  animation-name: rainbow;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite; // How many times to run
+  animation-fill-mode: // How to apply styles before or after animation
+  animation-direction:
+  animation-play-state: // Pause or running. Add it to pause on hover or manipulate with JS
+```
