@@ -28,7 +28,7 @@
       @keyframes sunPath {
         0% {
           background-color: #f1c40f;
-          transform: translate(0,0);
+          transform: translate(-200px,0);
         }
         25% {
           background-color: #F0C52B;
@@ -44,19 +44,16 @@
         }
         100% {
           background-color: #D14217;
-          transform: translate(1200px, 300px);
+          transform: translate(1300px, 300px);
         }
       }
 
       body {
         margin: 0 0 0 0;
         background-color: #2c3e50;
-
-        animation-name: sky;
-        animation-duration: 8s;
-        animation-timing-function: linear;
-        animation-delay: 0s;
-        animation-iteration-count: infinite;
+        /* shorthand notation */
+        /* First time is duration, second is delay, doesnt matter where they appear */
+        animation: sky 8s linear 0s infinite;
       }
 
       .grass {

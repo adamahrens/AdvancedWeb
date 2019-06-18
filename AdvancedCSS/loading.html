@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Animated Button</title>
+    <style media="screen">
+      html {
+        background: #ecf0f1;
+      }
+
+      body, h1, h2 {
+        font-family: Helvetica, Sans-serif;
+        color: #2c3e50;
+        margin:0;
+        padding:0;
+        font-weight:300;
+      }
+
+      h1 {
+        font-size: 80px;
+      }
+
+      @keyframes appear {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      
+      h2 {
+        font-size: 36px;
+        opacity: 0;
+        animation: appear 1s 3s forwards;
+      }
+
+      .container{
+        margin:4em;
+        text-align: center;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .loader {
+        margin: auto;
+        border: 16px solid #BDC3C7;
+        width: 120px;
+        height: 120px;
+        border-top-color: #1ABC9C;
+        border-bottom-color: #3498DB;
+        border-radius: 50%;
+        animation: spin 2s linear 0s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>This page takes forever to load.</h1>
+      <div class="loader">
+      </div>
+      <h2>Sorry! Not Sorry</h2>
+    </div>
+  </body>
+</html>
