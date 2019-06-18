@@ -22,3 +22,7 @@ Active vs Focus
 `:active` represents the state when the element is currently being activated by the user
 
 If a button is selected it has focus. When you click and hold the button it becomes active. Could click on a paragraph to make it active but it could never have focus.
+
+## Transform
+
+`div { transform: function } `
