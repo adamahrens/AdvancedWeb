@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Flex Boxing</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <style media="screen">
+    body {
+      margin: 0;
+      background: #ecf0f1;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .sidebar {
+      height: 100vh;
+      width: 15vw;
+      background: #34495e;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .item {
+      color: white;
+      font-size: 20px;
+      padding-bottom: 10px;
+      margin-left: 5px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      color: white;
+      border: 3px solid black;
+    }
+
+    .box {
+      font-size: 100px;
+      padding: 10px;
+      text-align: center;
+      box-sizing: border-box;
+      width: 500px;
+    }
+
+    .box-1 {
+      background-color: red;
+    }
+
+    .box-2 {
+      background-color: blue;
+    }
+
+    .box-3 {
+      background-color: yellow;
+    }
+
+    .box-4 {
+      background-color: orange;
+    }
+
+    .box-5 {
+      background-color: green;
+    }
+
+    .box-6 {
+      background-color: purple;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <!-- This section shoudl be at the top-->
+    <div class="section">
+      <div class="item">Messages</div>
+      <div class="item">Friends</div>
+      <div class="item">User Profile</div>
+    </div>
+    <!-- This section should be at the botto -->
+    <div class="section">
+      <div class="item">Settings</div>
+      <div class="item">Questions?</div>
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class='box box-1'>
+      1
+    </div>
+    <div class='box box-2'>
+      2
+    </div>
+    <div class='box box-3'>
+      3
+    </div>
+    <div class='box box-4'>
+      4
+    </div>
+    <div class='box box-5'>
+      5
+    </div>
+    <div class='box box-6'>
+      6
+    </div>
+  </div>
+</body>
+
+</html>
