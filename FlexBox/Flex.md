@@ -40,6 +40,18 @@ Defines how space is distributed between flex items in a flex container along th
 
 `justify-content: flex-end | center | space-between | space-around`
 
+# Align Items
+
+Defines how space is distributed between flex items in a flex container along the _Cross Axis_
+
+`align-items: flex-start | flex-end | stretch | center | baseline`
+
+# Align Content
+
+Defines how space is distributed between rows in a flex container along the _Cross Axis_
+
+`align-content: flex-start | flex-end | space-between | space-around`
+
 # Implementing
 
 The first bit of magic is `.container { display: flex; }`
