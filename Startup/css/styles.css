@@ -105,3 +105,78 @@ header {
   text-align: center;
   padding: 20px 46px;
 }
+
+/* Destinations */
+
+.destinations {
+  background-color: #FFF;
+  color: #414A4F;
+  align-items: center;
+}
+
+.title {
+  font: bold 38px 'Open Sans', sans-serif;
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.grid {
+  width: 90%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.grid li {
+  height: 350px;
+  padding: 20px;
+  background-clip: content-box;
+  background-size: cover;
+  background-position: center;
+}
+
+.destinations p {
+  max-width: 775px;
+  line-height: 2;
+  padding: 0 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.destinations hr {
+  width: 250px;
+  height: 2px;
+  background-color: #2196F3;
+  border 0;
+  margin-bottom: 80px;
+}
+
+.destinations ul {
+  list-style: none;
+}
+
+.small {
+  flex-basis: 30%;
+}
+
+.large {
+  flex-basis: 60%;
+}
+
+.mountain-1 {
+  background-image: url('../images/mountain1.jpg');
+}
+
+.mountain-2 {
+  background-image: url('../images/mountain2.jpg');
+}
+
+.mountain-3 {
+  background-image: url('../images/mountain3.jpg');
+}
+
+.mountain-4 {
+  background-image: url('../images/mountain4.jpg');
+}
+
+/* Features */
