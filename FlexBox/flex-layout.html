@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Holy Grail Layout</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <style media="screen">
+    .flexible {
+      display: flex;
+    }
+
+    .column {
+      flex-direction: column;
+    }
+
+    .row {
+      flex-direction: row;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      color: white;
+      margin: 0
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: #D8D8D9;
+    }
+
+    a:hover {
+      color: white;
+    }
+
+    header {
+      background: #CC0042;
+      flex-basis: 100px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 5px;
+    }
+
+    footer {
+      background: #CC0042;
+      flex-basis: 100px;
+      text-align: center;
+      padding-top: 15;
+    }
+
+    main {
+      color: black;
+      flex-basis: 800px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    nav {
+      background: #D8D8D9;
+      order: -1;
+      flex-basis: 20%;
+      flex-grow: 1;
+      margin: 2px;
+    }
+
+    aside {
+      background: #49BEFF;
+      flex-basis: 20%;
+      flex-grow: 1;
+      margin: 2px;
+    }
+
+    article {
+      flex-basis: 60%;
+      flex-grow: 3;
+      padding: 5px;
+      margin: 2px;
+    }
+
+    @media all and (max-width: 640px) {
+      main {
+        flex-direction: column;
+      }
+
+      nav {
+        order: 0;
+      }
+    }
+  </style>
+</head>
+
+<body class='column flexible'>
+  <header class='flexible'>
+    <a href="#">Home Left</a>
+    <a href="#">Home Right</a>
+  </header>
+  <main class='flexible'>
+    <article>
+      <p>
+        Main Content of the application. This is where all the main content on this site is supposed to go.
+      </p>
+      <p>
+        Main Content of the application. This is where all the main content on this site is supposed to go.
+      </p>
+      <p>
+        Main Content of the application. This is where all the main content on this site is supposed to go.
+      </p>
+      <p>
+        Lebowski ipsum lOGJAMMIN’. Mein nommen iss Karl. Is hard to verk in zese clozes. I don’t like you sucking around bothering our citizens, Lebowski. I spent most of my time occupying various, um, administration buildings, smoking thai-stick,
+        breaking into the ROTC and bowling. And Hill 364. These young men gave their lives. And Donny too. Donny who… who loved bowling. Okay. Vee take ze money you haf on you und vee call it eefen
+      </p>
+      <p>
+        Mind if I smoke a jay? When he moved down to Venice he had to go door-to-door to tell everyone he’s a pederast. Our basic freedoms. I don’t see any connection to Vietnam, Walter. People forget that the brain is the biggest erogenous zone.
+        Yeah man. Well, you know, the Dude abides. Hello, Pilar? My name is Walter Sobchak, we spoke on the phone, this is my associate Jeffrey Lebowski
+      </p>
+    </article>
+    <nav class='column flexible'>
+      <h3>Side Navigation</h3>
+      <ul>
+        <li>
+          First
+        </li>
+        <li>
+          Second
+        </li>
+        <li>
+          Third
+        </li>
+      </ul>
+    </nav>
+    <aside class='flexible'>An aside to possibly show some ads?</aside>
+  </main>
+  <footer>Footer 2019</footer>
+</body>
+
+</html>

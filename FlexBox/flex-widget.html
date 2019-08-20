@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Flexing widget</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <style media="screen">
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      background-color: #CCCCCC;
+      color: white;
+    }
+
+    .container {
+      display: flex;
+      border: 1px solid #D8D8D9;
+      flex-wrap: wrap;
+    }
+
+    h3 {
+      display: flex;
+    }
+
+    .box {
+      padding: 20px;
+      background-color: #CC0042;
+      text-align: center;
+      flex-grow: 1;
+      flex-shrink: 2;
+      flex-basis: 400px;
+      /* To combine into one line */
+      /* flex: 1 1 400px; */
+    }
+
+    .box:hover {
+      background-color: #FF0052;
+      transition: 0.2s background-color;
+    }
+
+    .middle {
+      background-color: #B20038;
+      flex-shrink: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='container'>
+    <div class='box'>
+      <h3>New Rick and Morty will appear in the Fall of 2020</h3>
+    </div>
+    <div class='box middle'>
+      <h3>Greatest Tarantino Flicks: It's an arbitrary list you'll disagree with</h3>
+    </div>
+    <div class='box'>
+      <h3>What to watch on YouTube. How to become the next big thing.</h3>
+    </div>
+  </div>
+</body>
+
+</html>

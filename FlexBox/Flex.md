@@ -52,6 +52,66 @@ Defines how space is distributed between rows in a flex container along the _Cro
 
 `align-content: flex-start | flex-end | space-between | space-around`
 
+<hr />
+
+# Align Self
+
+Can align individual items in a flex container. Can be used to override `align-items` on the container
+
+`align-self: flex-end`
+
+So might have something like
+
+```
+ .container {
+   align-items: center;
+ }
+
+ .special-div {
+   align-self: flex-start;
+ }
+```
+
+# Order
+
+Used to specify the layout of flex items within a flex container. Could be beneficial when dealing with responsive layouts. One order for a wide page, diffrent order for smaller
+
+Everything has a default of `order: 0;`
+
+Order is looking at the assignment for all all flex items. Adding something like `order: -1` will place that first. If you add something like `order: 23423`, since it's the larget will go at the end
+
+# Flex Basis
+
+All flex items are equally sized as now. Grow or shrink together. What if you had three columns and want the middle column to get more space allocated to it?
+
+`flex` is used to define how an item shrinks or grows
+
+`flex-basis` is similar to width. It specifies the ideal size of a flex item before its put into a flex container
+
+`flex-basis: 200px` if there is enough space in the container
+
+# Flex Grow
+
+Helps dictate how unused space should be used with the flex items if `flex-basis` has been satisfied
+
+```
+.box {
+  flex-grow: 1;
+}
+```
+
+# Flex Shrink
+
+Similar to grow. Dictates how items should shrink when there isn't enough space in a container
+
+Here is how you combine all three
+
+`flex: 0 0 300px // Doesnt grow or shrink`
+
+`flex: 1 0 300px // First option is grow, second shrink`
+
+<hr />
+
 # Implementing
 
 The first bit of magic is `.container { display: flex; }`
