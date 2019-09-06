@@ -22,11 +22,10 @@ setTimeout(function() {
 // clearInterval to stop
 
 function countDown(time) {
-    var countDown = time
     var result = setInterval(function() {
-        countDown -= 1;
-        if (countDown !== 0) {
-            console.log('Timer: ' + countDown);
+        time -= 1;
+        if (time !== 0) {
+            console.log('Timer: ' + time);
         } else {
             console.log('Ring Ring Ring!!!');
             clearInterval(result);

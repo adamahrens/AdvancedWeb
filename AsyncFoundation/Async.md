@@ -81,3 +81,11 @@ An area in memory where data is stored
 So `var obj = { first: 'Leroy', last: 'Jenkins'}`
 
 Heap is storing the actual data. `obj` references that location
+
+## Promise
+
+A promise is an object that represents a task that will be completed in the future
+
+## Promise Chaining
+
+Allows multiple `.then` to be chained together. Has the advantage of an inner `.then` that returns a promise, the chained `.then` won't be invoked until that first inner promise returns
