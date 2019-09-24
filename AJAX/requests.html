@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Making Async Requests</title>
+</head>
+
+<body>
+  <h1>Random Dogs</h1>
+  <img id='random-dog' src="https://images.dog.ceo/breeds/terrier-sealyham/n02095889_2532.jpg" alt="Random Dog">
+  <div>
+    <button id='fetch-dog'>Fetch Random Dog</button>
+  </div>
+
+  <script type="text/javascript">
+    var endpoint = 'https://api.github.com/zen'
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', endpoint);
+    xhr.onreadystatechange = function() {
+      console.log('Ready state = ' + xhr.readyState);
+
+      // 4 means Done, Response 200 is successful
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        console.log(xhr.responseText);
+      }
+    };
+
+    xhr.send();
+
+    // Fetch Dog when button clicked
+    document.getElementById('fetch-dog').onclick = function change() {
+      var request = new XMLHttpRequest();
+      request.open('GET', 'https://dog.ceo/api/breeds/image/random');
+      request.onreadystatechange = function() {
+        console.log('Ready state = ' + xhr.readyState);
+        if (request.readyState === 4 && request.status === 200) {
+          console.log(request.responseText);
+          var response = JSON.parse(request.responseText);
+          console.log(response.message)
+
+          // Update the image
+          document.getElementById('random-dog').src = response.message;
+        }
+      };
+
+      request.send();
+    }
+  </script>
+</body>
+
+</html>
