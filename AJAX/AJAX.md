@@ -27,7 +27,32 @@ JSON would look like
 ```
 { 'pin': {
     'author': 'Person',
-    'likes': 10 
+    'likes': 10
    }
 }
+```
+
+## Fetch
+
+XHR is older, was built before service workers or streaming. Fetch is the update to XHR. Fetch is not supported in IE.
+
+```
+fetch(url)
+.then(function(res) {
+
+})
+.catch(function(error){
+
+});
+```
+
+Can even fetch with options
+
+```
+fetch(url, {
+  method: 'POST',
+  body: JSON.stringify({ name: 'Blah', email: 'blah'})
+ }).then(function(res) {
+   // Do something
+ })
 ```
