@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>AJAX Exmples</title>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      console.log('Document is loaded');
+
+      $('#random-user').click(function() {
+        console.log('Random User Clicked');
+        var url = 'https://jsonplaceholder.typicode.com/users';
+        $.ajax({
+          url: url,
+          dataType: 'json'
+        }).done(function(data) {
+          var name = data[0].name;
+          var username = data[0].username;
+          var catchphrase = data[0].company.catchPhrase;
+          console.log(name);
+          console.log(username);
+          console.log(catchphrase);
+          $('#user-details').text(name + ' ' + username + ' : ' + catchphrase);
+        });
+      });
+
+      $('#random-image').click(function() {
+        console.log('Random image clicked');
+        $.get('https://jsonplaceholder.typicode.com/photos', function(data){
+          console.log('Got a response');
+          var imageURL = data[0].url;
+          $('#image').attr('src', imageURL);
+        });
+      });
+
+      $('#random-json').click(function() {
+        $.getJSON('https://api.github.com/users/adamahrens', function(data) {
+          console.log(data);
+          $('#github').text(JSON.stringify(data));
+        });
+      });
+    });
+  </script>
+  </head>
+  <body>
+    <div class='example'>
+      <h1>AJAX Using $.ajax()</h1>
+      <div class='user'>
+        <h3>Fetch Random User</h3>
+        <button id='random-user'>Random User</button>
+        <p id='user-details'>
+        </p>
+      </div>
+    </div>
+
+    <div class='example'>
+      <h1>AJAX Using $.get()</h1>
+      <div class='user'>
+        <h3>Fetch Random Image</h3>
+        <button id='random-image'>Random Image</button>
+        <img src= '' id='image' />
+      </div>
+    </div>
+
+    <div class='example'>
+      <h1>AJAX Using $.getJSON()</h1>
+      <div class='user'>
+        <h3>Fetch Random Image</h3>
+        <button id='random-json'>Github</button>
+        <p id='github'>
+
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>
