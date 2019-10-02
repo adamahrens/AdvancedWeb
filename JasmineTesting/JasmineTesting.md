@@ -22,7 +22,40 @@ Attached in the expect such as `toBe()` or `not.toBe()`
 `toBeDefined()` when ensuring we don't have an `undefined` value
 `toBeFalsy()` and `toBeTruthy()`
 `toContain()` when searching an array
-`toEqual` when checking with `===`
+`toEqual` when checking with `===`  
+
+## Hooks
+
+There is a `beforeEach` and `afterEach` function that can be called to DRY out setup/teardown for tests. Also has a `beforeAll` and `afterAll`
+
+Use an `xit` to make a test as pending
+
+## Spies
+
+A spy is a mock object. They only exist in the describe or it block and remove after each spec
+
+```javascript
+function(a, b) {
+  return a + b;
+}
+
+describe('add', function(){
+  var addSpy, result;
+  beforeEach(function(){
+    addSpy = spyOn(window, 'add');
+    result = addSpy(1,2);
+  });
+
+  it('can have its params tested', function(){
+    expect(addSpy).toHaveBeenCalled();
+    expect(addSpy).toHaveBeenCalledWith(1,2);
+  });
+});
+```
+
+## Clocks
+
+Testing time dependent and async code. Need to run `jasmine.clock().install()` in a `beforeEach` and run `jasmine.clock().uninstall()` in a `afterEach`
 
 Example
 ```javascript
@@ -40,3 +73,12 @@ describe('Earth', function() {
   });
 });
 ```
+
+## TDD
+
+Test Driven Development. Write your test code before your application code. Red, Green, Refactor.
+
+
+## BDD
+
+Behavior Driven Development. It's a subset of TDD. With BDD we're also describing the behavior
