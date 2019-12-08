@@ -68,7 +68,7 @@ Examples:
 function showFirstAndLast(arr){
     var firstLast = [];
     arr.forEach(function(value, index, array) {
-        firstLast.push(value.charAt(0) + value.charAt(value.length-1));
+        firstLast.push(value[0] + value.charAt(value.length-1));
     });
 
     return firstLast;
