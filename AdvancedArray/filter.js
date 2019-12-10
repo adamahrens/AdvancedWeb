@@ -104,11 +104,11 @@ Examples:
 */
 
 function doubleOddNumbers(arr) {
-  return arr.filter(function(value){
-    return value % 2 !== 0;
-  }).map(function(value){
-    return value * 2;
-  });
+    return arr.filter(function(value){
+      return value % 2 !== 0;
+    }).map(function(value){
+      return value * 2;
+    });
 }
 
 console.log(doubleOddNumbers([1,2,3,4,5]));
