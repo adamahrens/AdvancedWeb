@@ -25,3 +25,9 @@ Other libraries used with it (React Router & Redux)
 Define babel (transpiler. converts from one type of source to another). Use JSX for our first react.
 
 JSX -> Vanilla Javascript
+
+# JSX w/ Javascript
+
+Use style attributes in JSX
+
+Add className attribute
