@@ -55,6 +55,7 @@
         <div id="second"></div>
         <div id="first"></div>
     </div>
+    <div id="randomBox"></div>
 
     <script type="text/javascript">
         // Component
@@ -108,7 +109,22 @@
             }
         }
 
+        
+
+        class RandomBox extends React.Component {
+                render() {
+                    const colors = ["black", "red", "green", "blue"];
+                    const backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    return (
+                        <div style={{backgroundColor,  width: '500px', height:  '200px', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                            <h1>Random Box</h1>
+                        </div>
+                    )
+                }
+            }
+
         ReactDOM.render(<FurBaby2 />, document.getElementById("third"))
+        ReactDOM.render(<RandomBox />, document.getElementById("randomBox"))
     </script>
 </body>
 
