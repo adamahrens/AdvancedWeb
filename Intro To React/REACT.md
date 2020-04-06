@@ -19,3 +19,9 @@ Concerned with the View level.
 Other libraries used with it (React Router & Redux)
 
 `MessageComponent` in a `MessageListComponent`. `NavBarComponent`. One `App` with all 3 components
+
+# JSX
+
+Define babel (transpiler. converts from one type of source to another). Use JSX for our first react.
+
+JSX -> Vanilla Javascript

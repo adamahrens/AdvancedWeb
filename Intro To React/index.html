@@ -10,10 +10,12 @@
     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
     <script crossorigin src="https://cdn.jsdelivr.net/npm/react-dom-factories@1.0.2/index.min.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="first"></div>
+    <div id="second"></div>
 
     <script type="text/javascript">
         // Component
@@ -28,7 +30,23 @@
         }
 
         // Tell React where to render
-        ReactDOM.render(React.createElement(Pet), document.getElementById("app"))
+        ReactDOM.render(React.createElement(Pet), document.getElementById("first"))
+    </script>
+
+    <script type="text/babel">
+        // Component with JSX
+        class FurBaby extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <h2>Beatrix 2</h2>
+                        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=912&q=80" alt="Dog"/ >
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<FurBaby />, document.getElementById("second"))
     </script>
 </body>
 
