@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Application from './App';
+// import { App } from './App'; // If not export default specified
 import * as serviceWorker from './serviceWorker';
+import Pet from './Pet';
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Application />
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Pet />
   </React.StrictMode>,
   document.getElementById('root')
 );
