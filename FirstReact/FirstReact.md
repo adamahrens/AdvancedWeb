@@ -14,5 +14,14 @@ Bundle css and images as well
 
 `yarn build` for production
 
-# Import
+# Props
 
+Immutable data passed into components. Available as `this.props`
+
+How to pass props to a component
+
+```
+<ShowText text="hello"/>
+```
+
+Which makes it availabe as `this.props.text`
