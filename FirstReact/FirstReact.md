@@ -25,3 +25,25 @@ How to pass props to a component
 ```
 
 Which makes it availabe as `this.props.text`
+
+# Default Props
+
+Default values to use
+
+```
+static defaultProps = { ingredients: [] }
+
+IngredientList.defaultProps = { ingredients: [] };
+```
+
+# Prop Types
+
+What props a component is expecting. Development time checker. Only works in development mode
+
+`npm install --save prop-types`
+
+```
+static propTypes = {
+    ingredients: PropTypes.arrayof(PropTypes.string).isRequired
+}
+```

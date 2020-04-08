@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Recipe from './Recipe';
+import RecipeList from './RecipeList';
 
 function App() {
   return (
@@ -20,11 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <Recipe title="Monster Cookie"
-        ingredients={['Sugar', 'Peanut Butter', 'Brown Sugar', 'Oats']}
-        instructions="Add all the ingredients and mix"
-        image="https://images.unsplash.com/photo-1559622214-f8a9850965bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3101&q=80"
-      />
+      <RecipeList />
     </div>
   );
 }
