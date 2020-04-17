@@ -19,18 +19,31 @@ class App extends Component {
           name: 'Elie',
           hobbies: ['music', 'es2015']
         }
-      ]
+      ],
+      favoriteColor: 'red'
     };
 
     setTimeout(() => {
       console.log('Timeout called')
-      const idx = Math.floor(Math.random() * this.state.instructors.length);
-      const hobby = Math.floor(Math.random() * this.state.instructors[idx].hobbies.length);
       const ins = this.state.instructors.slice();
+      console.log(ins);
+      const idx = Math.floor(Math.random() * ins.length);
+      console.log('Random instructor index ' + idx + ' is ' + ins[idx]);
+      const idxHobby = Math.floor(Math.random() * ins[idx].hobbies.length);
+      console.log('Random hobby index ' + idxHobby + ' is ' + ins[idx].hobbies[idxHobby]);
+
+      // Use Object assign to update without side effects
       ins[idx] = Object.assign({}, ins[idx]);
       ins[idx].hobbies = ins[idx].hobbies.slice();
-      ins[idx].hobbies.slice(hobby, 1);
-      this.setState({ instructors: ins })
+      console.log('After slicing ' + ins[idx].hobbies)
+
+      const length = ins[idx].hobbies.length;
+      const left = ins[idx].hobbies.slice(0, idxHobby);
+      const right = ins[idx].hobbies.slice(idxHobby + 1, length);
+      ins[idx].hobbies = left.concat(right);
+      console.log('After slicing again ' + ins[idx].hobbies)
+
+      this.setState({ instructors: ins, favoriteColor: 'blue' })
     }, 5000);
   }
   render() {
@@ -45,6 +58,7 @@ class App extends Component {
         <ul>
           {instructors}
         </ul>
+        <p>{this.state.favoriteColor}</p>
       </div>
     );
   }
