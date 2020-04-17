@@ -37,6 +37,7 @@ class App extends Component {
       ins[idx].hobbies = ins[idx].hobbies.slice();
       console.log('After slicing ' + ins[idx].hobbies)
 
+      // Boom
       const length = ins[idx].hobbies.length;
       const left = ins[idx].hobbies.slice(0, idxHobby);
       const right = ins[idx].hobbies.slice(idxHobby + 1, length);
