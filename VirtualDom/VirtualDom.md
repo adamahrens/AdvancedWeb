@@ -77,3 +77,16 @@ Need to set an onChange
 
 </form>
 ```
+
+# Refs
+
+A reference to a direct DOM element. Bypassing the virtual DOM. Great use cases for managing focus, text selection, integrate with 3rd party DOM (D3.js), animations, or media playback
+
+```
+<form onSubmit={(e) =>{
+    e.preventDefault();
+    console.log(this.inputElement.value);
+}}>
+<input type="text" ref={(input) => this.inputElement = input }/>
+</form>
+```
