@@ -145,9 +145,9 @@ Implemented with a function instead of a class that extends on `Component`. The 
 ```
 import React from 'react';
 
-const Greeting = props => (
+const Greeting = props => {
     <h1>Hello {props.name}</h1>
-);
+};
 
 export default Greeting;
 ```

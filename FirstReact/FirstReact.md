@@ -47,3 +47,7 @@ static propTypes = {
     ingredients: PropTypes.arrayof(PropTypes.string).isRequired
 }
 ```
+
+# Prop childrens
+
+`props.children` A collection inside a component
