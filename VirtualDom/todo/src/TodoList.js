@@ -9,7 +9,7 @@ const TodoList = (props) => {
     if (todos.length == 0) {
         return <h1>Add a Todo</h1>
     } else {
-        return <ul>{todos}</ul>
+        return <ol>{todos}</ol>
     }
 };
 
