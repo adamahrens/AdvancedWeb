@@ -32,25 +32,32 @@ class App extends Component {
           image: "https://images.unsplash.com/photo-1559622214-f8a9850965bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3101&q=80"
         }
       ],
-      nextRecipeId: 3
+      nextRecipeId: 3,
+      showForm: false
     }
 
     this.saveRecipe = this.saveRecipe.bind(this)
+    this.toggleRecipe = this.toggleRecipe.bind(this)
   }
 
   saveRecipe(recipe) {
-
     this.setState((prevState, props) => {
       const newRecipe = { ...recipe, id: this.state.nextRecipeId }
-      return { recipes: [...this.state.recipes, newRecipe], nextRecipeId: prevState.nextRecipeId + 1 }
+      return { recipes: [...this.state.recipes, newRecipe], nextRecipeId: prevState.nextRecipeId + 1, showForm: false }
     });
   }
 
+  toggleRecipe() {
+    const toggled = !this.state.showForm
+    this.setState({ showForm: toggled })
+  }
+
   render() {
+    const { showForm } = this.state
     return (
       <div className="App" >
-        <Navbar />
-        <RecipeInput onSave={this.saveRecipe} />
+        <Navbar onNewRecipe={this.toggleRecipe} />
+        {showForm ? <RecipeInput onSave={this.saveRecipe} onClose={this.toggleRecipe} /> : null}
         <RecipeList recipes={this.state.recipes} />
       </div>
     );
