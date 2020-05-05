@@ -8,7 +8,7 @@ class Recipe extends Component {
         title: PropTypes.string.isRequired,
         ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
         instructions: PropTypes.string.isRequired,
-        img: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
     }
 
     render() {
