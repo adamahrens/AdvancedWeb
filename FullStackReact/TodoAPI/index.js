@@ -1,20 +1,17 @@
 var express = require('express');
 var bodyParser = require('body-parser')
 var axios = require('axios');
+var cors = require('cors');
+
 app = express();
 
+app.use(cors());
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(express.static(__dirname + '/views'))
-app.use(express.static(__dirname + '/assets'))
 
 // Routes
 var todoRoutes = require('./routes/todos')
 app.use('/api', todoRoutes);
-
-app.get('/', function (request, response) {
-    response.sendFile('index.html')
-})
 
 // Start
 app.listen(3001, function () {

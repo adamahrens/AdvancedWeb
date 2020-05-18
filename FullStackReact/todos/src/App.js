@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import TodoList from './TodoList'
 import './App.css';
 
 function App() {
@@ -7,7 +7,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>todo<span>list</span></h1>
-        <h2>A simple todo list build with express, mongodb, jquery</h2>
+        <h2>A simple todo list build with express, mongodb, react</h2>
+        <TodoList />
       </header>
     </div>
   );
