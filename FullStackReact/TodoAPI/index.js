@@ -1,6 +1,5 @@
 var express = require('express');
 var bodyParser = require('body-parser')
-var axios = require('axios');
 var cors = require('cors');
 
 app = express();
