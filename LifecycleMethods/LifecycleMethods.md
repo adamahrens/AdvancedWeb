@@ -51,3 +51,35 @@ class Box extends Component {
     }
 }
 ```
+
+## componentDidMount
+
+Useful for making AJAX requests
+
+`GET https://hacker-news.firebaseio.com/v0/topstories.json`
+` [list of ids]`
+
+`GET https://hacker-news.firebaseio.com/v0/item1500069.json`
+```
+{ "by", "id", "title", "url" } keys of returned JSON
+```
+
+```
+constructor(props) {
+    this.state = { stories: [] };
+}
+
+componentDidMount() {
+    const top = 'https://hacker-news.firebaseio.com/v0/topstories.json'
+    const storyBase = 'https://hacker-news.firebaseio.com/v0/' // need id.json
+
+    fetch(topStores)
+    .then(data => data.json())
+    .then(data => data.map(id => { 
+        const url = `${storybase}${id}.json`
+        return fetch(url).then(d => d.json())
+    }))
+    .then(promies => Promise.all(promises))
+    .then(stories => this.setState{stories}));
+}
+```
