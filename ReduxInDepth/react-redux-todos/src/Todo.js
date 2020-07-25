@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const Todo = ({ task }) => (
-    <li>{task}</li>
+    <li className='task'>{task}</li>
 )
 
 export default Todo

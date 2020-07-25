@@ -5,14 +5,14 @@ export const REMOVE_TODO = 'REMOVE_TODO'
 // Use when we connect react and redux
 export function addTodo(task) {
     return {
-        key: ADD_TODO,
+        type: ADD_TODO,
         task
     }
 }
 
 export function removeTodo(id) {
     return {
-        key: REMOVE_TODO,
+        type: REMOVE_TODO,
         id
     }
 }
