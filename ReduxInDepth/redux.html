@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redux</title>
+</head>
+
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.5/redux.js">
+    </script>
+    <script>
+        var initialState = { count: 0 };
+
+        // Action creators
+        var inc = function () {
+            return {
+                type: '++'
+            }
+        }
+
+        var dec = function () {
+            return {
+                type: '--'
+            }
+        }
+
+        var reducer = function rootReducer(state = initialState, action) {
+            console.log('Calling rootReducer with state ' + JSON.stringify(state));
+            console.log('Calling rootReducer with action ' + JSON.stringify(action));
+            if (action.type === '++') {
+                // Want to be a pure function
+                let newState = Object.assign({}, state);
+                newState.count++;
+                return newState;
+            } else if (action.type === '--') {
+                let newState = Object.assign({}, state);
+                newState.count--;
+                return newState;
+            }
+
+            state.unknownAction = action.type
+            return state;
+        }
+
+        var store = Redux.createStore(reducer);
+
+        // Gets the current state
+        console.log(store.getState())
+
+        // Lets dispatch some changes
+        store.dispatch({ "type": "lebowski" })
+
+        // Check state again
+        console.log(store.getState())
+
+        // Lets dispatch some changes that reducer can handle
+        store.dispatch({ "type": "++" })
+        store.dispatch({ "type": "++" })
+        store.dispatch({ "type": "++" })
+
+        // Check state again
+        console.log(store.getState())
+
+        // Lets dispatch some changes that reducer can handle
+        store.dispatch({ "type": "--" })
+
+        // Check state again
+        console.log(store.getState())
+
+        // Use a function
+        store.dispatch(inc())
+
+        // Check state again
+        console.log(store.getState())
+    </script>
+</body>
+
+</html>
