@@ -19,3 +19,7 @@ https://jwt.io/
 ## Send JWT
 
 Use in `Authorization: Bearer JWT` in a HTTP Header
+
+## Using httpie
+
+`http POST localhost:8081/api/auth/signup username=theusername password=thepassword! email=theemail`
