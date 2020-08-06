@@ -3,5 +3,8 @@ mongoose.set('debug', true);
 mongoose.Promse = Promise;
 mongoose.connect('mongodb://localhost/warbler', {
     keepAlive: true,
-    userMongoClient: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
+
+module.exports.User = require('./user');
