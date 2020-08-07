@@ -12,11 +12,13 @@ const errorHandler = require('./handlers/error')
 const cors = require('cors');
 const PORT = 8081;
 const authRoutes = require('./routes/auth');
+const messageRoutes = require('./routes/messages');
 
 app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/api/auth', authRoutes);
+app.use('/api/users/:id/messages', messageRoutes);
 
 app.use(function (request, response, next) {
     let error = new Error('Not found');

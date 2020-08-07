@@ -18,7 +18,11 @@ const userSchema = new mongoose.Schema({
     },
     profileImageUrl: {
         type: String
-    }
+    },
+    messages: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Message'
+    }]
 });
 
 // Presave Hook
@@ -37,11 +41,12 @@ userSchema.pre('save', async function (next) {
 });
 
 // Instance methods
-userSchema.method.comparePassword = async function (pass, next) {
+userSchema.methods.comparePassword = async function (pass, next) {
     try {
-        let isMatch = await bcrypt.compare(this.password, pass);
+        let isMatch = await bcrypt.compare(pass, this.password);
         return isMatch;
     } catch (error) {
+        console.log('Error using bcrypt')
         return next(error);
     }
 }
